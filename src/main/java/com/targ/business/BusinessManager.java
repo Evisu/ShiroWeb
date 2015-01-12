@@ -24,6 +24,8 @@ public class BusinessManager {
 
 	public List<String> queryPermissions(String username)
 	{
+		// ²éÑ¯È¨ÏŞ
+		
 		
 		return null;
 	}

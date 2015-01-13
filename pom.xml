@@ -33,7 +33,7 @@
 				<extensions>true</extensions>
 				<version>2.3.5</version>
 				<configuration>
-					<manifestLocation>META-INF</manifestLocation>
+					<manifestLocation>src/main/webapp/META-INF</manifestLocation>
 					<instructions>
 						<Bundle-SymbolicName>com.targ.ShiroWeb</Bundle-SymbolicName>
 						<Bundle-Name>com.targ.ShiroWeb</Bundle-Name>
@@ -41,7 +41,8 @@
 						<Bundle-Vendor>com.targ.ShiroWeb</Bundle-Vendor>
 						<DynamicImport-Package>*</DynamicImport-Package>
 						<Require-Bundle>org.hibernate.core;bundle-version="4.2.15.Final";resolution:=optional</Require-Bundle>
-						<Bundle-ClassPath>.</Bundle-ClassPath>
+						<Bundle-ClassPath>WEB-INF/classes</Bundle-ClassPath>
+						<Web-ContextPath>/ShiroWeb</Web-ContextPath>
 						<Export-Package>com.targ.ShiroWeb*</Export-Package>
 						<Import-Package>*</Import-Package>
 						<!-- add ,plugin.xml if it's present i.e. src/main/resources,plugin.xml -->

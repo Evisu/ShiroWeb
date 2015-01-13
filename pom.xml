@@ -23,7 +23,7 @@
 				<version>2.3.2</version>
 				<configuration>
 					<archive>
-						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+						<manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
 					</archive>
 				</configuration>
 			</plugin>
@@ -45,7 +45,7 @@
 						<Export-Package>com.targ.ShiroWeb*</Export-Package>
 						<Import-Package>*</Import-Package>
 						<!-- add ,plugin.xml if it's present i.e. src/main/resources,plugin.xml -->
-						<Include-Resource>src/main/resources</Include-Resource>
+						<Include-Resource>src/main/resources,src/main/webapp</Include-Resource>
 					</instructions>
 				</configuration>
 			</plugin>

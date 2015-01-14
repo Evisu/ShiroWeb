@@ -4,7 +4,7 @@
 	<groupId>com.targ</groupId>
 	<artifactId>ShiroWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>bundle</packaging>
+	<packaging>war</packaging>
 
 	<build>
 		<plugins>
@@ -19,11 +19,11 @@
 			</plugin>
 
 			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.2</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<archive>
-						<manifestFile>src/main/webapp/META-INF/MANIFEST.MF</manifestFile>
+						<manifestFile>${project.build.directory}/${pom.artifactId}-${pom.version}/META-INF/MANIFEST.MF</manifestFile>
 					</archive>
 				</configuration>
 			</plugin>
@@ -33,14 +33,13 @@
 				<extensions>true</extensions>
 				<version>2.3.5</version>
 				<configuration>
-					<manifestLocation>src/main/webapp/META-INF</manifestLocation>
+					<manifestLocation>${project.build.directory}/${pom.artifactId}-${pom.version}/META-INF</manifestLocation>
 					<instructions>
 						<Bundle-SymbolicName>com.targ.ShiroWeb</Bundle-SymbolicName>
 						<Bundle-Name>com.targ.ShiroWeb</Bundle-Name>
-						<Bundle-Version>1.0.0.qualifier</Bundle-Version>
+						<Bundle-Version>1.0.0</Bundle-Version>
 						<Bundle-Vendor>com.targ.ShiroWeb</Bundle-Vendor>
 						<DynamicImport-Package>*</DynamicImport-Package>
-						<Require-Bundle>org.hibernate.core;bundle-version="4.2.15.Final";resolution:=optional</Require-Bundle>
 						<Bundle-ClassPath>WEB-INF/classes</Bundle-ClassPath>
 						<Web-ContextPath>/ShiroWeb</Web-ContextPath>
 						<Export-Package>com.targ.ShiroWeb*</Export-Package>

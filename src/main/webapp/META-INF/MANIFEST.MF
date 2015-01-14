@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bundle-ClassPath: WEB-INF/classes
+Bundle-ClassPath: E:\git-resp\ShiroWeb\target\classes/WEB-INF/classes
 Built-By: Administrator
 Tool: Bnd-1.43.0
 Bundle-Name: com.targ.ShiroWeb
@@ -11,7 +11,8 @@ Bundle-Vendor: com.targ.ShiroWeb
 DynamicImport-Package: *
 Build-Jdk: 1.7.0_60
 Bundle-Version: 1.0.0.qualifier
-Bnd-LastModified: 1421141984675
+Bnd-LastModified: 1421201042247
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: com.targ.ShiroWeb
+Originally-Created-By: Apache Maven Bundle Plugin
 

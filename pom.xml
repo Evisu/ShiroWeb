@@ -7,6 +7,7 @@
 	<packaging>war</packaging>
 
 	<build>
+		<finalName>ShiroWeb</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -23,7 +24,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<archive>
-						<manifestFile>${project.build.directory}/${pom.artifactId}-${pom.version}/META-INF/MANIFEST.MF</manifestFile>
+						<manifestFile>${project.build.directory}/META-INF/MANIFEST.MF</manifestFile>
 					</archive>
 				</configuration>
 			</plugin>
@@ -33,18 +34,20 @@
 				<extensions>true</extensions>
 				<version>2.3.5</version>
 				<configuration>
-					<manifestLocation>${project.build.directory}/${pom.artifactId}-${pom.version}/META-INF</manifestLocation>
+					<manifestLocation>META-INF</manifestLocation>
+					<supportedProjectTypes>
+						<supportedProjectType>war</supportedProjectType>
+					</supportedProjectTypes>
 					<instructions>
 						<Bundle-SymbolicName>com.targ.ShiroWeb</Bundle-SymbolicName>
 						<Bundle-Name>com.targ.ShiroWeb</Bundle-Name>
 						<Bundle-Version>1.0.0</Bundle-Version>
 						<Bundle-Vendor>com.targ.ShiroWeb</Bundle-Vendor>
 						<DynamicImport-Package>*</DynamicImport-Package>
-						<Bundle-ClassPath>WEB-INF/classes</Bundle-ClassPath>
+						<Bundle-ClassPath>WEB-INF/classes,.</Bundle-ClassPath>
 						<Web-ContextPath>/ShiroWeb</Web-ContextPath>
 						<Export-Package>com.targ.ShiroWeb*</Export-Package>
 						<Import-Package>*</Import-Package>
-						<!-- add ,plugin.xml if it's present i.e. src/main/resources,plugin.xml -->
 						<Include-Resource>src/main/resources,src/main/webapp</Include-Resource>
 					</instructions>
 				</configuration>
@@ -57,61 +60,71 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>4.1.4.RELEASE</version>
+			<version>3.1.1.RELEASE</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>4.1.4.RELEASE</version>
+			<version>3.1.1.RELEASE</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.4.RELEASE</version>
+			<version>3.1.1.RELEASE</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-core</artifactId>
 			<version>1.2.3</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-ehcache</artifactId>
 			<version>1.2.3</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-web</artifactId>
 			<version>1.2.3</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
 			<version>1.2.3</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-cas</artifactId>
 			<version>1.2.3</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.2</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>

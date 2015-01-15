@@ -6,55 +6,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<build>
-		<finalName>ShiroWeb</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
-				<configuration>
-					<target>1.7</target>
-					<source>1.7</source>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifestFile>${project.build.directory}/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<version>2.3.5</version>
-				<configuration>
-					<manifestLocation>META-INF</manifestLocation>
-					<supportedProjectTypes>
-						<supportedProjectType>war</supportedProjectType>
-					</supportedProjectTypes>
-					<instructions>
-						<Bundle-SymbolicName>com.targ.ShiroWeb</Bundle-SymbolicName>
-						<Bundle-Name>com.targ.ShiroWeb</Bundle-Name>
-						<Bundle-Version>1.0.0</Bundle-Version>
-						<Bundle-Vendor>com.targ.ShiroWeb</Bundle-Vendor>
-						<DynamicImport-Package>*</DynamicImport-Package>
-						<Bundle-ClassPath>WEB-INF/classes,.</Bundle-ClassPath>
-						<Web-ContextPath>/ShiroWeb</Web-ContextPath>
-						<Export-Package>com.targ.ShiroWeb*</Export-Package>
-						<Import-Package>*</Import-Package>
-						<Include-Resource>src/main/resources,src/main/webapp</Include-Resource>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 	<dependencies>
 
 		<dependency>
@@ -128,5 +79,68 @@
 		</dependency>
 
 	</dependencies>
+	
+	
+	<build>
+		<finalName>ShiroWeb</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<target>1.7</target>
+						<source>1.7</source>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<archive>
+							<manifestFile>${project.build.directory}/${project.artifactId}/META-INF/MANIFEST.MF</manifestFile>
+						</archive>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>bundle-manifest</id>
+							<phase>process-classes</phase>
+							<goals>
+								<goal>manifest</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<supportedProjectTypes>
+							<supportedProjectType>jar</supportedProjectType>
+							<supportedProjectType>bundle</supportedProjectType>
+							<supportedProjectType>war</supportedProjectType>
+						</supportedProjectTypes>
+						<instructions>
+							<Bundle-SymbolicName>com.targ.ShiroWeb</Bundle-SymbolicName>
+							<Bundle-Name>com.targ.ShiroWeb</Bundle-Name>
+							<Bundle-Version>1.0.0</Bundle-Version>
+							<Bundle-Vendor>com.targ.ShiroWeb</Bundle-Vendor>
+							<DynamicImport-Package>*</DynamicImport-Package>
+							<Bundle-ClassPath>WEB-INF/classes,.</Bundle-ClassPath>
+							<Web-ContextPath>/ShiroWeb</Web-ContextPath>
+							<Export-Package>com.targ.ShiroWeb*</Export-Package>
+							<Import-Package>*</Import-Package>
+							<Include-Resource>src/main/resources,src/main/webapp</Include-Resource>
+						</instructions>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
 
 </project>

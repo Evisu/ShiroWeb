@@ -83,7 +83,6 @@
 	
 	<build>
 		<finalName>ShiroWeb</finalName>
-		<pluginManagement>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -101,7 +100,7 @@
 					<version>2.4</version>
 					<configuration>
 						<archive>
-							<manifestFile>${project.build.directory}/${project.artifactId}/META-INF/MANIFEST.MF</manifestFile>
+							<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
 						</archive>
 					</configuration>
 				</plugin>
@@ -139,7 +138,6 @@
 					</configuration>
 				</plugin>
 			</plugins>
-		</pluginManagement>
 
 	</build>
 

@@ -63,7 +63,7 @@ public class LoginAction extends HttpServlet
 			request.getRequestDispatcher( "/jsp/login.jsp" ).forward( request, response );
 		} else
 		{// µÇÂ¼³É¹¦
-			request.setAttribute( "subject", subject );
+			request.getSession().setAttribute( "subject", subject );
 			System.out.println("-------------------------------"+subject.getPrincipal());
 			request.getRequestDispatcher( "/jsp/success.jsp" ).forward( request, response );
 		}

@@ -14,8 +14,8 @@
 		<property name="loginAccountList">
 			<list>
 				<bean name="account1" class="com.targ.business.LoginAccount">
-					<property name="username" value="zhangsan" />
-					<property name="password" value="123" />
+					<property name="username" value="111" />
+					<property name="password" value="111" />
 				</bean>
 				<bean name="account2" class="com.targ.business.LoginAccount">
 					<property name="username" value="lisi" />
@@ -104,10 +104,14 @@
 		</property>
 		<property name="filterChainDefinitions">
 			<value>
+				<!-- anon匿名拦截器，即不需要登陆即可访问,一般用于静态资源过滤 -->
 				/index.jsp = anon
+				<!-- authc基于表单的拦截器,如果没有登录会跳到相应的登录界面登录 -->
 				/unauthorized.jsp = authc
 				/loginServlet=authc
+				<!-- logout退出拦截器 -->
 				/logout = logout
+				<!-- 用户拦截器，用户已经身份验证/记住我登录的都可 -->
 				/** = user
 			</value>
 		</property>

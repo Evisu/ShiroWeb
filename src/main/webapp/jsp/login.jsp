@@ -1,15 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>用户登录</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap-3.2.0/css/bootstrap.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap-3.2.0/css/bootstrap.css">
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/css/bootstrap-3.2.0/js/bootstrap.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/common/respond.js"></script>
 <style>
 .error {
 	color: red;
@@ -35,7 +33,7 @@ function getById(id)
 	<div style="width: 400px; height: 200px; float: center; margin-left: 550px; margin-top: 50px;">
 
 		<div class="page-header">
-			<h1>用户登录</h1>
+			<h1>用户登录1</h1>
 		</div>
 
 		<div class="error">${error}</div>
@@ -72,7 +70,7 @@ function getById(id)
 					记住我!
 				</label>
 			</div>
-			<button type="submit" class="btn btn-default btn-primary" value="true">登录</button>
+			<input type="submit" name="submit" class="btn btn-default btn-primary" value="登录" />
 		</form>
 	</div>
 

@@ -1,7 +1,6 @@
 package com.targ.business;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 从数据库获取用户信息及用户权限信息的业务类

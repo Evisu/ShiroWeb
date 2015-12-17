@@ -2,9 +2,25 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.targ</groupId>
-	<artifactId>com.targ.ShiroWeb</artifactId>
+	<artifactId>ShiroWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	
+	<distributionManagement>
+		<!-- 设置snapshots和releases工厂 -->
+		<snapshotRepository>
+			<id>Snapshots</id>
+			<name>User Snapshots</name>
+			<url>http://192.168.1.15:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		
+		<repository>
+			<id>Releases</id>
+			<name>User Releases</name>
+			<url>http://192.168.1.15:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		
+	</distributionManagement>
 
 	<dependencies>
 
@@ -79,7 +95,6 @@
 		</dependency>
 
 	</dependencies>
-	
 	
 	<build>
 		<finalName>ShiroWeb</finalName>
